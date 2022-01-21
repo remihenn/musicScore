@@ -85,7 +85,7 @@ saxo_alto = \relative {
   }
 }
 
-{
+\score {
   \new StaffGroup <<
   \transpose c bes {\piano}
   \new Staff \with { instrumentName = "Clarinette" }  
@@ -93,7 +93,10 @@ saxo_alto = \relative {
   \new Staff \with { instrumentName = "Saxophone" }  
   { \transpose ees bes {\saxo_alto} }
   >>
-  <<
+}
+
+\score {
+  \new StaffGroup <<
   { \piano }
   \new Staff \with { instrumentName = "Clarinette" }  
   { \clarinet }
