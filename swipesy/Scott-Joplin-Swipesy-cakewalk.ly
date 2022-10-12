@@ -38,10 +38,35 @@ altoSax = \relative do'' {
 right = \relative do' {
   \global
   % Music follows here.
-  fa16 fa'8 dod16 re8 do
+  \repeat volta 2 {
+
+  fa16\f fa'8-> dod16 re8 do
   sib8 re, mib mi
-  fa16 sib8 sold16 la8 sol
-  fa8 fa'
+  fa16 sib8-> sold16 la8 sol
+  fa8 fa' <mi sol> <mib la>
+  \bar "||"
+  <re sib'>16 <re sib'>8 fa16 la16 sol fa re
+  fa16 sol8 fa16 re8 sib8
+  sib16 re8 sib16 <fad la>8 <fad re'>16 sol16~
+  sol4 r16 sib8 sol16
+  sib16 do sib sol sib do sib sol
+  sib16 <fa re'>8 sib16 <sol re'>4
+  do16 <do sib'>8 <do la'>16~ <do la'>16 mi8 <do sol'>16
+  <mib do'>16 fa <mib la> fa sol16 <mib la>8 fa16
+  <re sib'>16 <re sib'>8 fa16 la16 sol fa re
+  fa16 sol8 fa16 re8 sib
+  sib16 re8 sib16 <fad la>8 <fad re'>16 sol~
+  sol4 r16 sib8 sol16
+  sib16 do sib sol sib16 do sib sol
+  sib16 <fa re'>8 sib16 <fa re'>4
+  <mi sol>16 <mi re'>8. <fa la>16 <fa do'>8 <fa sib>16~
+  }
+  \alternative {
+    { \(<fa sib>16 fa sol la sib16 do re fa\)}
+    { <fa, sib>16 \(fa sol la sib8\) fa}
+  }
+  \bar "||"
+
 
 
 
