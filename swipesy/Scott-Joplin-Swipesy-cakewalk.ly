@@ -62,7 +62,7 @@ right = \relative do' {
   <mi sol>16 <mi re'>8. <fa la>16 <fa do'>8 <fa sib>16~
   }
   \alternative {
-    { \(<fa sib>16 fa sol la sib16 do re fa\)}
+    { <fa sib>16 \(fa sol la sib16 do re fa\) }
     { <fa, sib>16 \(fa sol la sib8\) fa}
   }
   \bar "||"
@@ -75,7 +75,21 @@ right = \relative do' {
 left = \relative do {
   \global
   % Music follows here.
-  fa16
+  fa16 fa'8-> dod16 re8 do
+  sib8 re, mib mi
+  fa16 sib8-> sold16 fa8 sol
+  fa8 <re re'> <reb reb'> <do do'>
+  <sib sib'>8 <fa' sib re> fa, <fa' sib re>
+  sib,8 <fa' si re> fa, <fa' sib re>
+  <sol sib re>8 <sol sib re> <re fad la re> <re fad la re>
+  <sol sib re>8 <sol sib re> <sol sib re> <sol sib re>
+  <mib, mib'>8 <fa fa'> <sol sol'> <la la'>
+  <sib, sib'>8 <fa sib re> fa <fa sib re>
+  sib8 <fa sib re> fa <fa sib re>
+  <sol sib re>8 <sol sib re> <re fad la re'> <re, fad la re'>
+  <sol si re>8 <sol si re> <sol si re> <sol si re>
+
+
 
 }
 
