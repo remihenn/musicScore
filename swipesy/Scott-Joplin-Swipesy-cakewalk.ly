@@ -77,8 +77,48 @@ themaBRight = {
   sib16 do sib sol sib16 do sib sol
   sib16 <fa re'>8 sib16 <fa re'>4
   <mi sol>16 <mi re'>8. <fa la>16 <fa do'>8 <fa sib>16~
+}
 
+themaCBeginRight = {
+  lab8 fa16 fa~ fa do re mib
+  <lab, re sol>8 <lab re fa>16 <lab re fa>16~ <lab re fa>16 sib do re
+  <sol, fa'>8 <sol mib'>16 <sol mib'>16~ <sol mib'>16 sol lab sib
+}
 
+themaCRight = {
+   \key mib \major
+   \themaCBeginRight
+   <sol do>8 <sol sib>16 <sol sib>16~ <sol sib>16 sol fa mib
+   r16 re fa lab re <lab do>8 re16
+   <lab do>8 <lab do>16 <lab do>16~ <lab do>16 sib lab fa
+   r16 mib sol sib mib <sol, do>8 mib'16
+   <sol, do>8 <sol sib>16 <sol sib>16~ <sol sib>8 sib'16 la
+   \themaCBeginRight
+   <sol do>8 <sol sib>16  <sol sib>16~  <sol sib>16 sib mib sol
+   r16 mi sol sib reb do8 <do, sib'>16~
+   <do sib'>16 la' <sib, do mi sol>8 <lab do fa> <do mib fad>
+   sol'16 sib8 sol16 <la, mib' fa>8 <lab fa'>16 <sol mib'>~
+}
+
+themaDIntroductionRight = {
+  fa'16 <fa, sib re>8 fa'16 <fa, sib re>4
+  fa'16 <fa, sib re>8 fa'16 <fa, sib re>8. %put the last time after
+}
+
+themaDRight = {
+  \key sib \major
+  \themaDIntroductionRight <sol sib>16~
+  <sol sib>16 do <sol re> sib <sol do> re <sol do> <fa sib>~
+  <fa sib>4~ <fa sib>8. fa16
+  \themaDIntroductionRight <mib sol>16~
+  <mib sol>8 <mi re'> <mib do'>16 <mib re'>8 <fa la do>16~
+  <fa la do>8 <fa fa'> <mi mi'> <mib mib'>
+  \themaDIntroductionRight <sol sib>16~
+  <sol sib> do <sol sib>8 <sol do>16 sib <sol do> <fad re'>~
+  <fad re'>4~ <fad re'>8. sib16
+  re sib do re do sib lab re
+  <sol, mib'>8 re'16 do~ do16 sib sol sib
+  fa <fa fa'>8 <fa re'>16 <mi sib' do>8 <mib do'>16 <re sib'>~
 }
 
 right = \relative do' {
@@ -100,7 +140,21 @@ right = \relative do' {
     {<fa sib>8 fa' <mi sol> <mib la> \bar "||"}
   }
   \themaARight
-
+  { <fa sib>16 \(fa sol la\) sib8 sib'16 la}
+  \repeat volta 2 {
+    \themaCRight
+  }
+  \alternative {
+  {<sol mib'>16 sol'8 do16 sib8 sib16 la}
+  {<sol, mib'>8 <re' lab' sib> <mib sol sib mib> fa,}
+  }
+  \repeat volta 2 {
+    \themaDRight
+  }
+  \alternative {
+    {<re sib'>16 <fa fa'>8. <fa fa'>8 <fa la fa'>}
+    {<re sib'>16 sib' re fa <sib, sib'>8 r \bar "|."}
+  }
 }
 
 introductionLeft = {
@@ -159,7 +213,13 @@ left = \relative do {
     {<sib re>8 <fa do' mib> <sib re> r \bar "||"}
   }\repeat volta 2 {
     \themaBLeft
-  }\alternative {}
+  }\alternative {
+    {<sib re>8 r r <si, si'>}
+    {<sib' re>8 <re, re'> <reb reb'> <do do'>}
+  }
+  \themaALeft
+  { <sib re>8 <fa do mib'> <sib re> <si, si'>16 <la la'> \bar "||" }
+
 }
 
 clarinetPart = \new Staff \with {
