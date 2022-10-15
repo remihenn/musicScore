@@ -75,22 +75,30 @@ right = \relative do' {
 left = \relative do {
   \global
   % Music follows here.
+  \repeat volta 2 {
   fa16 fa'8-> dod16 re8 do
   sib8 re, mib mi
   fa16 sib8-> sold16 fa8 sol
   fa8 <re re'> <reb reb'> <do do'>
   <sib sib'>8 <fa' sib re> fa, <fa' sib re>
-  sib,8 <fa' si re> fa, <fa' sib re>
+  sib,8 <fa' sib re> fa, <fa' sib re>
   <sol sib re>8 <sol sib re> <re fad la re> <re fad la re>
   <sol sib re>8 <sol sib re> <sol sib re> <sol sib re>
   <mib, mib'>8 <fa fa'> <sol sol'> <la la'>
-  <sib, sib'>8 <fa sib re> fa <fa sib re>
-  sib8 <fa sib re> fa <fa sib re>
-  <sol sib re>8 <sol sib re> <re fad la re'> <re, fad la re'>
-  <sol si re>8 <sol si re> <sol si re> <sol si re>
-
-
-
+  <sib sib'>8 <fa' sib re> <sol, sol'> <sol' sib re>
+  do,8 <sib' do mi> do, <sib' do mi>
+  <fa, fa'>8 <fad fad'> <sol sol'> <la la'>
+  <sib sib'>8 <fa' sib re> fa, <fa' sib re>
+  sib,8 <fa' sib re> fa, <fa' sib re>
+  <sol sib re>8 <sol sib re> <re fad la re> <re fad la re>
+  <sol sib re>8 <sol sib re> <sol sib re> <sol sib re>
+  <mib, mib'>8 <fa fa'> <sol sol'> <la la'>
+  <sib sib'>8 <fa' sib re> sol, <fa' sol si>
+  do8 <sol' sib> fa <la mib'>}
+  \alternative {
+  {<sib re>8 <fa do' mib> <sib re> r}
+  {<sib re>8 <fa do' mib> <sib re> r}
+  }
 }
 
 clarinetPart = \new Staff \with {
