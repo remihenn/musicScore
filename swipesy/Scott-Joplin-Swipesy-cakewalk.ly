@@ -86,18 +86,18 @@ themaCBeginRight = {
 }
 
 themaCRight = {
-   \key mib \major
-   \themaCBeginRight
-   <sol do>8 <sol sib>16 <sol sib>16~ <sol sib>16 sol fa mib
-   r16 re fa lab re <lab do>8 re16
-   <lab do>8 <lab do>16 <lab do>16~ <lab do>16 sib lab fa
-   r16 mib sol sib mib <sol, do>8 mib'16
-   <sol, do>8 <sol sib>16 <sol sib>16~ <sol sib>8 sib'16 la
-   \themaCBeginRight
-   <sol do>8 <sol sib>16  <sol sib>16~  <sol sib>16 sib mib sol
-   r16 mi sol sib reb do8 <do, sib'>16~
-   <do sib'>16 la' <sib, do mi sol>8 <lab do fa> <do mib fad>
-   sol'16 sib8 sol16 <la, mib' fa>8 <lab fa'>16 <sol mib'>~
+  \key mib \major
+  \themaCBeginRight
+  <sol do>8 <sol sib>16 <sol sib>16~ <sol sib>16 sol fa mib
+  r16 re fa lab re <lab do>8 re16
+  <lab do>8 <lab do>16 <lab do>16~ <lab do>16 sib lab fa
+  r16 mib sol sib mib <sol, do>8 mib'16
+  <sol, do>8 <sol sib>16 <sol sib>16~ <sol sib>8 sib'16 la
+  \themaCBeginRight
+  <sol do>8 <sol sib>16  <sol sib>16~  <sol sib>16 sib mib sol
+  r16 mi sol sib reb do8 <do, sib'>16~
+  <do sib'>16 la' <sib, do mi sol>8 <lab do fa> <do mib fad>
+  sol'16 sib8 sol16 <la, mib' fa>8 <lab fa'>16 <sol mib'>~
 }
 
 themaDIntroductionRight = {
@@ -145,8 +145,8 @@ right = \relative do' {
     \themaCRight
   }
   \alternative {
-  {<sol mib'>16 sol'8 do16 sib8 sib16 la}
-  {<sol, mib'>8 <re' lab' sib> <mib sol sib mib> fa,}
+    {<sol mib'>16 sol'8 do16 sib8 sib16 la}
+    {<sol, mib'>8 <re' lab' sib> <mib sol sib mib> fa,}
   }
   \repeat volta 2 {
     \themaDRight
@@ -201,6 +201,48 @@ themaBLeft = {
   do <sol' sib> fa <la mib'>
 }
 
+themaCLeft = {
+  \key mib \major
+  <re re'>8 <lab' sib re> sib, <lab' sib re>
+  fa <lab sib re> sib, <lab' sib re>
+  mib <sol sib mib> sib, <sol' sib mib>
+  mib <sol sib mib> sib, <sol' sib mib>
+  fa <la sib re> sib, <la' sib re>
+  fa <la sib re> sib, <la' sib re>
+  mib <sol sib mib> sib, <sol' sib mib>
+  mib <sol sib mib> <sol sib mib> <sib, sib'>16 <do do'>
+  <re re'>8 <la' sib re> sib, <la' sib re>
+  fa <la sib re> sib, <la' sib re>
+  mib <sol sib mib> sib, <sol' sib mib>
+  mib <sol sib mib> sib, <sol' sib mib>
+  <do,, do'> <sib'' do mi> <mi,, mi'> <sib'' do mi>
+  <fa, fa'> <sol sol'> <lab lab'> <la la'>
+  <sib sib'> <sol' sib mib> <do,, do'> <re re'>
+}
+
+themaDIntroductionLeft = {
+  \fixed do {
+    sib, <fa sib re> fa, <fa sib re>
+    sib, <fa sib re> fa, <fa sib re>
+  }
+}
+
+themaDLeft = {
+  \key sib \major
+  \themaDIntroductionLeft
+  <mib mib'> <fa fa'> <sol sol'> <la la'>
+  <sib sib'> <fa' sib re> fa, <fa' sib re>
+  \themaDIntroductionLeft
+  do <sol' sib> do, <sol' sib>
+  <fa, fa'> <fa fa'> <sol sol'> <la la'>
+  \themaDIntroductionLeft
+  <mi mi'> <mi mi'> <mi mi'> <mi mi'>
+  <re re'> <la' la'> <fad fad'> <re re'>
+  <sib' sib'> <lab lab'> <sol sol'> <fa fa'>
+  <mib mib'> <mib' sol do> <mi, mi'> <mi' sib' dod>
+  <fa, fa'> <fa' sib re> <sol, sol'> <la la'>
+}
+
 left = \relative do {
   \global
   % Music follows here.
@@ -219,7 +261,20 @@ left = \relative do {
   }
   \themaALeft
   { <sib re>8 <fa do mib'> <sib re> <si, si'>16 <la la'> \bar "||" }
-
+  \repeat volta 2 {
+    \themaCLeft
+  }
+  \alternative {
+    {<mib mib'>8 <sol' sib mib>  <sol sib mib> <sib, sib'>16 <do do'>}
+    {<mib, mib'>8 <sib sib'>8 <mib mib,> r}
+  }
+  \repeat volta 2 {
+    \themaDLeft
+  }
+  \alternative {
+    {<sib sib'> <fa' sib re> <fa sib re> <fa do' mib> }
+    {<sib, sib'> <fa fa'> <sib, sib'> r}
+  }
 }
 
 clarinetPart = \new Staff \with {
