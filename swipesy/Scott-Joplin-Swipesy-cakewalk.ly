@@ -43,37 +43,42 @@ introductionRight = {
   \bar "||"
 }
 
-themaARight = {
-  <re sib'>16 <re sib'>8 fa16 la16 sol fa re
-  fa16 sol8 fa16 re8 sib8
-  sib16 re8 sib16 <fad la>8 <fad re'>16 sol16~
-  sol4 r16 sib8 sol16
-  sib16 do sib sol sib do sib sol
-  sib16 <fa re'>8 sib16 <sol re'>4
-  do16 <do sib'>8 <do la'>16~ <do la'>16 mi8 <do sol'>16
-  <mib do'>16 fa <mib la> fa sol16 <mib la>8 fa16
+themaAQuestionRight = {
   <re sib'>16 <re sib'>8 fa16 la16 sol fa re
   fa16 sol8 fa16 re8 sib
-  sib16 re8 sib16 <fad la>8 <fad re'>16 sol~
+  sib16 re8 sib16 <fad la>8 <fad re'>16 % last pitch after
+}
+
+themaAAnswerRight = {
   sol4 r16 sib8 sol16
-  sib16 do sib sol sib16 do sib sol
-  sib16 <fa re'>8 sib16 <fa re'>4
+  sib16 do sib sol sib do sib sol
+  sib16 <fa re'>8 sib16 % last pitch after
+}
+
+themaARight = {
+  \themaAQuestionRight sol16~
+  \themaAAnswerRight <sol re'>4
+  do16 <do sib'>8 <do la'>16~ <do la'>16 mi8 <do sol'>16
+  <mib do'>16 fa <mib la> fa sol16 <mib la>8 fa16
+  \themaAQuestionRight sol~
+  \themaAAnswerRight  <fa re'>4
   <mi sol>16 <mi re'>8. <fa la>16 <fa do'>8 <fa sib>16~
 }
 
-themaBRight = {
+themaBIntroductionRight = {
   la16 <fa mib'>8 do'16 re16 do la fa
   la16 <fa mib'>8 do'16 re16 do la fa
   sib16 re8 sib16 sol4
   r16 <sol sib re>8 do16 re16 do sib sol
+}
+
+themaBRight = {
+  \themaBIntroductionRight
   la16 <fad re'>8 do'16 <fad, la>4~
   <fad la>2
   sib16 re8 sib16 sol4
   r16 <sol sib re>8 do16 re16 do sib sol
-  la16 <fa mib'>8 do'16 re16 do la fa
-  la16 <fa mib'>8 do'16 re16 do la fa
-  sib16 re8 sib16 sol4
-  r16 <sol sib re>8 do16 re16 do sib sol
+  \themaBIntroductionRight
   sib16 do sib sol sib16 do sib sol
   sib16 <fa re'>8 sib16 <fa re'>4
   <mi sol>16 <mi re'>8. <fa la>16 <fa do'>8 <fa sib>16~
@@ -165,21 +170,20 @@ introductionLeft = {
   \bar "||"
 }
 
-themaALeft = {
+themaAIntroductionLeft = {
   <sib sib'>8 <fa' sib re> fa, <fa' sib re>
   sib,8 <fa' sib re> fa, <fa' sib re>
   <sol sib re>8 <sol sib re> <re fad la re> <re fad la re>
   <sol sib re>8 <sol sib re> <sol sib re> <sol sib re>
   <mib, mib'>8 <fa fa'> <sol sol'> <la la'>
-  <sib sib'>8 <fa' sib re> <sol, sol'> <sol' sib re>
+  <sib sib'>8 <fa' sib re> % 2 pitches after
+}
+
+themaALeft = {
+  \themaAIntroductionLeft <sol, sol'> <sol' sib re>
   do,8 <sib' do mi> do, <sib' do mi>
   <fa, fa'>8 <fad fad'> <sol sol'> <la la'>
-  <sib sib'>8 <fa' sib re> fa, <fa' sib re>
-  sib,8 <fa' sib re> fa, <fa' sib re>
-  <sol sib re>8 <sol sib re> <re fad la re> <re fad la re>
-  <sol sib re>8 <sol sib re> <sol sib re> <sol sib re>
-  <mib, mib'>8 <fa fa'> <sol sol'> <la la'>
-  <sib sib'>8 <fa' sib re> sol, <fa' sol si>
+  \themaAIntroductionLeft sol, <fa' sol si>
   do8 <sol' sib> fa <la mib'>
 }
 
@@ -201,20 +205,21 @@ themaBLeft = {
   do <sol' sib> fa <la mib'>
 }
 
-themaCLeft = {
-  \key mib \major
+themaCIntroductionLeft = {
   <re re'>8 <lab' sib re> sib, <lab' sib re>
   fa <lab sib re> sib, <lab' sib re>
   mib <sol sib mib> sib, <sol' sib mib>
   mib <sol sib mib> sib, <sol' sib mib>
+}
+
+themaCLeft = {
+  \key mib \major
+  \themaCIntroductionLeft
   fa <la sib re> sib, <la' sib re>
   fa <la sib re> sib, <la' sib re>
   mib <sol sib mib> sib, <sol' sib mib>
   mib <sol sib mib> <sol sib mib> <sib, sib'>16 <do do'>
-  <re re'>8 <la' sib re> sib, <la' sib re>
-  fa <la sib re> sib, <la' sib re>
-  mib <sol sib mib> sib, <sol' sib mib>
-  mib <sol sib mib> sib, <sol' sib mib>
+  \themaCIntroductionLeft
   <do,, do'> <sib'' do mi> <mi,, mi'> <sib'' do mi>
   <fa, fa'> <sol sol'> <lab lab'> <la la'>
   <sib sib'> <sol' sib mib> <do,, do'> <re re'>
