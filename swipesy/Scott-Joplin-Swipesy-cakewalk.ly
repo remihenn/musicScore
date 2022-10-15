@@ -40,7 +40,6 @@ introductionRight = {
   sib8 re, mib mi
   fa16 sib8-> sold16 la8 sol
   fa8 fa' <mi sol> <mib la>
-  \bar "||"
 }
 
 themaAQuestionRight = {
@@ -88,20 +87,19 @@ themaCBeginRight = {
   lab8 fa16 fa~ fa do re mib
   <lab, re sol>8 <lab re fa>16 <lab re fa>16~ <lab re fa>16 sib do re
   <sol, fa'>8 <sol mib'>16 <sol mib'>16~ <sol mib'>16 sol lab sib
+  <sol do>8 <sol sib>16 <sol sib>16~ <sol sib>16  % last picht after
 }
 
 themaCRight = {
   \key mib \major
-  \themaCBeginRight
-  <sol do>8 <sol sib>16 <sol sib>16~ <sol sib>16 sol fa mib
+  \themaCBeginRight sol fa mib
   r16 re fa lab re <lab do>8 re16
   <lab do>8 <lab do>16 <lab do>16~ <lab do>16 sib lab fa
   r16 mib sol sib mib <sol, do>8 mib'16
   <sol, do>8 <sol sib>16 <sol sib>16~ <sol sib>8 sib'16 la
-  \themaCBeginRight
-  <sol do>8 <sol sib>16  <sol sib>16~  <sol sib>16 sib mib sol
+  \themaCBeginRight sib mib sol
   r16 mi sol sib reb do8 <do, sib'>16~
-  <do sib'>16 la' <sib, do mi sol>8 <lab do fa> <do mib fad>
+  <do sib'>16 lab' <sib, do mi sol>8 <lab do fa> <do mib fad>
   sol'16 sib8 sol16 <la, mib' fa>8 <lab fa'>16 <sol mib'>~
 }
 
@@ -113,9 +111,9 @@ themaDIntroductionRight = {
 themaDRight = {
   \key sib \major
   \themaDIntroductionRight <sol sib>16~
-  <sol sib>16 do <sol re> sib <sol do> re <sol do> <fa sib>~
+  <sol sib>16 do <sol re'> sib <sol do> re' <sol do> <fa sib>~
   <fa sib>4~ <fa sib>8. fa16
-  \themaDIntroductionRight <mib sol>16~
+  \themaDIntroductionRight <mi sol>16~
   <mib sol>8 <mi re'> <mib do'>16 <mib re'>8 <fa la do>16~
   <fa la do>8 <fa fa'> <mi mi'> <mib mib'>
   \themaDIntroductionRight <sol sib>16~
@@ -135,17 +133,17 @@ right = \relative do' {
   }
   \alternative {
     { <fa sib>16 \(fa sol la sib16 do re fa\) }
-    { <fa, sib>16 \(fa sol la sib8\) fa \bar "||"}
+    { <fa, sib>16 \(fa sol la sib8\) fa}
   }
   \repeat volta 2 {
     \themaBRight
   }
   \alternative {
     {<fa sib>8 \acciaccatura sol' fa \acciaccatura sol fa fa,}
-    {<fa sib>8 fa' <mi sol> <mib la> \bar "||"}
+    {<fa sib>8 fa' <mi sol> <mib la>}
   }
   \themaARight
-  { <fa sib>16 \(fa sol la\) sib8 sib'16 la}
+  <fa sib>16 \(fa sol la\) sib8 sib'16 la
   \repeat volta 2 {
     \themaCRight
   }
@@ -167,7 +165,6 @@ introductionLeft = {
   sib8 re, mib mi
   fa16 sib8-> sold16 fa8 sol
   fa8 <re re'> <reb reb'> <do do'>
-  \bar "||"
 }
 
 themaAIntroductionLeft = {
@@ -215,20 +212,20 @@ themaCIntroductionLeft = {
 themaCLeft = {
   \key mib \major
   \themaCIntroductionLeft
-  fa <la sib re> sib, <la' sib re>
-  fa <la sib re> sib, <la' sib re>
+  fa <lab sib re> sib, <lab' sib re>
+  fa <lab sib re> sib, <lab' sib re>
   mib <sol sib mib> sib, <sol' sib mib>
   mib <sol sib mib> <sol sib mib> <sib, sib'>16 <do do'>
   \themaCIntroductionLeft
-  <do,, do'> <sib'' do mi> <mi,, mi'> <sib'' do mi>
+  <do,, do'>8 <sib'' do mi> <mi,, mi'> <sib'' do mi>
   <fa, fa'> <sol sol'> <lab lab'> <la la'>
   <sib sib'> <sol' sib mib> <do,, do'> <re re'>
 }
 
 themaDIntroductionLeft = {
   \fixed do {
-    sib, <fa sib re> fa, <fa sib re>
-    sib, <fa sib re> fa, <fa sib re>
+    sib, <fa sib re'> fa, <fa sib re'>
+    sib, <fa sib re'> fa, <fa sib re'>
   }
 }
 
@@ -241,7 +238,7 @@ themaDLeft = {
   do <sol' sib> do, <sol' sib>
   <fa, fa'> <fa fa'> <sol sol'> <la la'>
   \themaDIntroductionLeft
-  <mi mi'> <mi mi'> <mi mi'> <mi mi'>
+  <mib mib'> <mib mib'> <mib mib'> <mib mib'>
   <re re'> <la' la'> <fad fad'> <re re'>
   <sib' sib'> <lab lab'> <sol sol'> <fa fa'>
   <mib mib'> <mib' sol do> <mi, mi'> <mi' sib' dod>
@@ -257,7 +254,7 @@ left = \relative do {
   }
   \alternative {
     {<sib re>8 <fa do' mib> <sib re> r}
-    {<sib re>8 <fa do' mib> <sib re> r \bar "||"}
+    {<sib re>8 <fa do' mib> <sib re> r}
   }\repeat volta 2 {
     \themaBLeft
   }\alternative {
@@ -265,7 +262,7 @@ left = \relative do {
     {<sib' re>8 <re, re'> <reb reb'> <do do'>}
   }
   \themaALeft
-  { <sib re>8 <fa do mib'> <sib re> <si, si'>16 <la la'> \bar "||" }
+  { <sib re>8 <fa do' mib> <sib re> <sib, sib'>16 <do do'>}
   \repeat volta 2 {
     \themaCLeft
   }
