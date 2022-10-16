@@ -58,6 +58,32 @@ themaBSaxo = {
   \themaBIntroductionSaxo
 }
 
+themaCSaxo = {
+  r4 r8 sib'16 la
+  \repeat volta 2 {
+    \key mib \major
+    lab8 fa16 fa~ fa r16 r8
+    r4 r16 sib, do re
+    fa8 mib16 mib16~ mib16 r16 r8
+    r4 r16 sol, fa mib
+    r16 re fa lab re do8 re16
+    do8 do16 do16~ do16 r16 r8
+    r16 mib, sol sib mib do8 mib16
+    do8 sib16 sib16~ sib8 sib16 la
+    lab8 fa16 fa~ fa r16 r8
+    r4 r16 sib do re
+    fa8 mib16 mib16~ mib16 r16 r8
+    r4 r16 sib mib sol
+    r16 mi sol sib reb do8 sib16~
+    sib16 lab sol8 fa fad
+    sol16 sib8 sol16 fa8 fa16 mib~
+  }
+   \alternative {
+    { mib16 sol8 do16 sib8 sib16 la}
+    {mib8 sib mib fa,}
+  }
+}
+
 altoSax = \relative do'' {
   \global
   \transposition mib
@@ -76,6 +102,7 @@ altoSax = \relative do'' {
   \compressMMRests { R2*4 }
   \themaASaxo
   \compressMMRests { R2*3 }
+  \themaCSaxo
 }
 
 introductionRight = {
