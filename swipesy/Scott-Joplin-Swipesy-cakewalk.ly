@@ -19,20 +19,63 @@ global = {
   \tempo "Slow" 4=80
 }
 
+themaAClarinet = {
+  r4 r16 sib8 sol16
+  sib16 do sib sol sib do sib sol
+  sib16 re8 sib16
+}
+
 clarinet = \relative do'' {
   \global
   \transposition sib
   % Music follows here.
-  r
+  \compressMMRests { R2*7 }
+  \themaAClarinet re4
+  \compressMMRests { R2*5 }
+  \themaAClarinet re4
+  r2 r2 r2
+}
 
+themaASaxo = {
+  sib'16 sib8 fa16 la16 sol fa re
+  fa16 sol8 fa16 re8 sib
+  sib16 re8 sib16 la8 re16 sol,~
+  sol4 r4
+}
+
+themaBIntroductionSaxo = {
+  la16 mib'8 do16 re16 do la fa
+  la16 mib'8 do16 re16 do la fa
+  sib16 re8 sib16 sol4
+  r16 sib8 do16 re16 do sib sol
+}
+
+themaBSaxo = {
+  \themaBIntroductionSaxo
+  la16 re8 do16 la4~
+  la2
+  r2 r2
+  \themaBIntroductionSaxo
 }
 
 altoSax = \relative do'' {
   \global
   \transposition mib
   % Music follows here.
-  r
-
+  \compressMMRests { R2*4 }
+  \themaASaxo
+  \compressMMRests { R2*4 }
+  \themaASaxo
+  \compressMMRests { R2*5 }
+  \themaBSaxo
+  sib16 do sib sol sib16 do sib sol
+  sib16 re8 sib16 re4
+  sol,16 re'8. la16 do8 sib16
+  r2 r2
+  \themaASaxo
+  \compressMMRests { R2*4 }
+  \themaASaxo
+  \compressMMRests { R2*3 }
 }
 
 introductionRight = {
@@ -104,14 +147,16 @@ themaCRight = {
 }
 
 themaDIntroductionRight = {
-  fa'16 <fa, sib re>8 fa'16 <fa, sib re>4
-  fa'16 <fa, sib re>8 fa'16 <fa, sib re>8. %put the last time after
+  \fixed do {
+    fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>4
+    fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>8. %put the last time after
+   }
 }
 
 themaDRight = {
   \key sib \major
   \themaDIntroductionRight <sol sib>16~
-  <sol sib>16 do <sol re'> sib <sol do> re' <sol do> <fa sib>~
+  <sol sib>16 do <sol re'> sib <sol do> re' <sol, do> <fa sib>~
   <fa sib>4~ <fa sib>8. fa16
   \themaDIntroductionRight <mi sol>16~
   <mib sol>8 <mi re'> <mib do'>16 <mib re'>8 <fa la do>16~
@@ -163,7 +208,7 @@ right = \relative do' {
 introductionLeft = {
   fa16 fa'8-> dod16 re8 do
   sib8 re, mib mi
-  fa16 sib8-> sold16 fa8 sol
+  fa16 sib8-> sold16 la8 sol
   fa8 <re re'> <reb reb'> <do do'>
 }
 
@@ -282,12 +327,14 @@ left = \relative do {
 clarinetPart = \new Staff \with {
   instrumentName = "Clarinet"
   midiInstrument = "clarinet"
-} \clarinet
+} \transpose sib do {\clarinet}
 
 altoSaxPart = \new Staff \with {
   instrumentName = "Alto Sax"
   midiInstrument = "alto sax"
-} \altoSax
+}
+\altoSax
+%\transpose mib do {\altoSax}
 
 pianoPart = \new PianoStaff \with {
   instrumentName = "Piano"
