@@ -80,8 +80,32 @@ themaCSaxo = {
   }
    \alternative {
     { mib16 sol8 do16 sib8 sib16 la}
-    {mib8 sib mib fa,}
+    {mib8 sib' mib fa,}
   }
+}
+
+themaDSaxo = {
+  \key sib \major
+  r2
+  r4 r8 r16 sib~
+  sib do re sib do re do sib~
+  sib4~ sib8. r16
+  r2
+  r4 r8 r16 sol~
+  sol4 re' do16 re8 do16
+  r2
+  r2
+  r4 r8 r16 sib~
+  sib16 do sib do sib do re~
+  re4~ re8.
+
+
+
+  \compressMMRests { R2*8 }
+  \fixed do {
+    fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>4
+    fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>8. %put the last time after
+   }
 }
 
 altoSax = \relative do'' {
@@ -103,6 +127,13 @@ altoSax = \relative do'' {
   \themaASaxo
   \compressMMRests { R2*3 }
   \themaCSaxo
+   \repeat volta 2 {
+    \themaDSaxo
+  }
+  \alternative {
+    {}
+    {}
+  }
 }
 
 introductionRight = {
