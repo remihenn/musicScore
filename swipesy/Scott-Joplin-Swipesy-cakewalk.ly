@@ -26,6 +26,10 @@ themaAClarinet = {
 }
 
 themaBClarinet = {
+  \compressMMRests { R2*6 }
+  sib16 re8 sib16 sol4
+  r16 re8 do16 re16 do sib sol
+  \compressMMRests { R2*6 }
 }
 
 clarinet = \relative do'' {
