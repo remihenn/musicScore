@@ -87,25 +87,20 @@ themaCSaxo = {
 themaDSaxo = {
   \key sib \major
   r2
-  r4 r8 r16 sib~
+  r4 r8 r16 sib,~
   sib do re sib do re do sib~
   sib4~ sib8. r16
   r2
   r4 r8 r16 sol~
-  sol4 re' do16 re8 do16
+  sol8 re' do16 re8 do16
   r2
   r2
   r4 r8 r16 sib~
-  sib16 do sib do sib do re~
-  re4~ re8.
-
-
-
-  \compressMMRests { R2*8 }
-  \fixed do {
-    fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>4
-    fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>8. %put the last time after
-   }
+  sib16 do sib8 do16 sib do re~
+  re4~ re8. sib16
+  re sib do re do sib lab re
+  mib8 re16 do~ do sib sol si
+  fa16 fa'8 re16 do8 do16 sib~
 }
 
 altoSax = \relative do'' {
@@ -131,8 +126,8 @@ altoSax = \relative do'' {
     \themaDSaxo
   }
   \alternative {
-    {}
-    {}
+    {sib16 fa'8. fa8 fa8}
+    {sib,16 sib re fa sib8 r}
   }
 }
 
