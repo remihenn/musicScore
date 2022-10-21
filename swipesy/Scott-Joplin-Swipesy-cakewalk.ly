@@ -5,7 +5,6 @@
   title = "Swipesy (cakewalk)"
   instrument = "Piano Clarinette Saxophone"
   composer = "Scott Joplin"
-  arranger = "arrangement Rémi Hennebelle"
 }
 
 \paper {
@@ -20,20 +19,32 @@ global = {
 }
 
 themaAClarinet = {
+  \compressMMRests { R2*3 }
   r4 r16 sib8 sol16
   sib16 do sib sol sib do sib sol
-  sib16 re8 sib16
+  sib16 re8 sib16 re4
+}
+
+themaBClarinet = {
 }
 
 clarinet = \relative do'' {
   \global
   \transposition sib
   % Music follows here.
-  \compressMMRests { R2*7 }
-  \themaAClarinet re4
-  \compressMMRests { R2*5 }
-  \themaAClarinet re4
-  r2 r2 r2
+  \compressMMRests { R2*4 }
+  \repeat volta 2 {
+    \themaAClarinet
+    do16 re8 do16~
+    do sol8 sib16
+    la2
+    \themaAClarinet
+    sol,16 re'8. la16 do8 sib16~
+  }
+  \alternative {
+    {sib16 fa sol la sib do re fa}
+    {sib16 fa sol la sib8 fa}
+  }
 }
 
 themaASaxo = {
@@ -78,7 +89,7 @@ themaCSaxo = {
     sib16 lab sol8 fa fad
     sol16 sib8 sol16 fa8 fa16 mib~
   }
-   \alternative {
+  \alternative {
     { mib16 sol8 do16 sib8 sib16 la}
     {mib8 sib' mib fa,}
   }
@@ -122,7 +133,7 @@ altoSax = \relative do'' {
   \themaASaxo
   \compressMMRests { R2*3 }
   \themaCSaxo
-   \repeat volta 2 {
+  \repeat volta 2 {
     \themaDSaxo
   }
   \alternative {
@@ -203,7 +214,7 @@ themaDIntroductionRight = {
   \fixed do {
     fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>4
     fa''16 <fa' sib' re''>8 fa''16 <fa' sib' re''>8. %put the last time after
-   }
+  }
 }
 
 themaDRight = {
@@ -380,7 +391,9 @@ left = \relative do {
 clarinetPart = \new Staff \with {
   instrumentName = "Clarinet"
   midiInstrument = "clarinet"
-} \transpose sib do {\clarinet}
+}
+\clarinet
+%\transpose sib do {\clarinet}
 
 altoSaxPart = \new Staff \with {
   instrumentName = "Alto Sax"
