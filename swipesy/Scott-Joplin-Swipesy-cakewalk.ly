@@ -18,18 +18,49 @@ global = {
   \tempo "Slow" 4=80
 }
 
-themaAClarinet = {
+themaAAnswerClarinet = {
   \compressMMRests { R2*3 }
   r4 r16 sib8 sol16
   sib16 do sib sol sib do sib sol
   sib16 re8 sib16 re4
 }
 
+themaAClarinet = {
+  \themaAAnswerClarinet
+  do16 re8 do16~
+  do sol8 sib16
+  la2
+  \themaAAnswerClarinet
+  sol,16 re'8. la16 do8 sib16~
+}
+
 themaBClarinet = {
   \compressMMRests { R2*6 }
-  sib16 re8 sib16 sol4
-  r16 re8 do16 re16 do sib sol
-  \compressMMRests { R2*6 }
+  sib,,16 re8 sib16 sol4
+  r16 re'8 do16 re16 do sib sol
+  \compressMMRests { R2*7 }
+}
+
+themaCClarinet = {
+  \key mib \major
+  r4 r16 do re mib
+  sol8 fa16 fa~ fa r16 r8
+  r4 r16 sol lab sib
+  do8 si16 si~ si r16 r8
+  r16 re, fa lab re do8 re16
+  do8 do16 do16~ do16 r16 r8
+  r16 mib, sol sib mib do8 mib16
+  do8 sib16 sib16~ sib8 r8
+  %
+  r4 r16 do, re mib
+  sol8 fa16 fa~ fa r16 r8
+  r4 r16 sol lab sib
+  do8 si16 si~ si r16 r8
+  \compressMMRests { R2*3 }
+}
+
+themaDClarinet = {
+
 }
 
 clarinet = \relative do'' {
@@ -39,15 +70,26 @@ clarinet = \relative do'' {
   \compressMMRests { R2*4 }
   \repeat volta 2 {
     \themaAClarinet
-    do16 re8 do16~
-    do sol8 sib16
-    la2
-    \themaAClarinet
-    sol,16 re'8. la16 do8 sib16~
   }
   \alternative {
     {sib16 fa sol la sib do re fa}
     {sib16 fa sol la sib8 fa}
+  }
+  \repeat volta 2 {
+    \themaBClarinet
+  }
+  \alternative {
+    { r2 }
+    { r2 }
+  }
+  \themaAClarinet
+  sib4 r4
+  \repeat volta 2 {
+    \themaCClarinet
+  }
+  \alternative {
+    { r2 }
+    { r2 }
   }
 }
 
@@ -80,8 +122,8 @@ themaCSaxo = {
     lab8 fa16 fa~ fa r16 r8
     r4 r16 sib, do re
     fa8 mib16 mib16~ mib16 r16 r8
-    r4 r16 sol, fa mib
-    r16 re fa lab re do8 re16
+    r2
+    r16 re, fa lab re do8 re16
     do8 do16 do16~ do16 r16 r8
     r16 mib, sol sib mib do8 mib16
     do8 sib16 sib16~ sib8 sib16 la
