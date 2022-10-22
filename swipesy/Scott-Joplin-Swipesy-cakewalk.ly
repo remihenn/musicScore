@@ -20,23 +20,29 @@ global = {
 
 themaAAnswerClarinet = {
   \compressMMRests { R2*3 }
-  r4 r16 sib8 sol16
-  sib16 do sib sol sib do sib sol
-  sib16 re8 sib16 re4
+  \fixed do{
+    r4 r16 sib8 sol16
+    sib16 do' sib sol sib do' sib sol
+    sib16 re'8 sib16 re'4
+  }
 }
 
 themaAClarinet = {
   \themaAAnswerClarinet
-  do16 re8 do16~
-  do sol8 sib16
+  \fixed do {
+  do'16 re'8 do'16~
+  do' sol8 sib16
   la2
+  }
   \themaAAnswerClarinet
-  sol,16 re'8. la16 do8 sib16~
+  \fixed do {
+    sol16 re'8. la16 do'8 sib16~
+  }
 }
 
 themaBClarinet = {
   \compressMMRests { R2*6 }
-  sib,,16 re8 sib16 sol4
+  sib16 re8 sib16 sol4
   r16 re'8 do16 re16 do sib sol
   \compressMMRests { R2*7 }
 }
@@ -45,22 +51,32 @@ themaCClarinet = {
   \key mib \major
   r4 r16 do re mib
   sol8 fa16 fa~ fa r16 r8
-  r4 r16 sol lab sib
-  do8 si16 si~ si r16 r8
-  r16 re, fa lab re do8 re16
+  r4 r16 sol, lab sib
+  do8 sib16 sib~ sib r16 r8
+  r16 fa lab do re do8 re16
   do8 do16 do16~ do16 r16 r8
   r16 mib, sol sib mib do8 mib16
   do8 sib16 sib16~ sib8 r8
   %
-  r4 r16 do, re mib
+  r4 r16 do re mib
   sol8 fa16 fa~ fa r16 r8
-  r4 r16 sol lab sib
-  do8 si16 si~ si r16 r8
+  r4 r16 sol, lab sib
+  do8 sib16 sib~ sib r16 r8
   \compressMMRests { R2*3 }
 }
 
 themaDClarinet = {
-
+  \key sib \major
+  fa'16 re8 fa16 re8 r8
+  fa16 re8 fa16 re8 r8
+  \compressMMRests { R2*2 }
+  fa16 re8 fa16 re8 r8
+  fa16 re8 fa16 re8 r8
+  \compressMMRests { R2*2 }
+  fa16 re8 fa16 re8 r8
+  fa16 re8 fa16 re8 r8
+  \compressMMRests { R2*4 }
+  fa,16 fa8 fa16 sol8 la
 }
 
 clarinet = \relative do'' {
@@ -72,8 +88,8 @@ clarinet = \relative do'' {
     \themaAClarinet
   }
   \alternative {
-    {sib16 fa sol la sib do re fa}
-    {sib16 fa sol la sib8 fa}
+    {sib,16 fa sol la sib do re fa}
+    {sib,16 fa sol la sib8 fa}
   }
   \repeat volta 2 {
     \themaBClarinet
@@ -91,6 +107,13 @@ clarinet = \relative do'' {
     { r2 }
     { r2 }
   }
+  \repeat volta 2 {
+    \themaDClarinet
+  }
+  \alternative {
+    { sib2 }
+    { sib2 }
+  }
 }
 
 themaASaxo = {
@@ -104,7 +127,7 @@ themaBIntroductionSaxo = {
   la16 mib'8 do16 re16 do la fa
   la16 mib'8 do16 re16 do la fa
   sib16 re8 sib16 sol4
-  r16 sib8 do16 re16 do sib sol
+  r16 re'8 do16 re16 do sib sol
 }
 
 themaBSaxo = {
@@ -156,7 +179,7 @@ themaDSaxo = {
   sib16 do sib8 do16 sib do re~
   re4~ re8. sib16
   re sib do re do sib lab re
-  mib8 re16 do~ do sib sol si
+  mib8 re16 do~ do sib sol sib
   fa16 fa'8 re16 do8 do16 sib~
 }
 
@@ -269,7 +292,7 @@ themaDRight = {
   <sol sib>16 do <sol re'> sib <sol do> re' <sol, do> <fa sib>~
   <fa sib>4~ <fa sib>8. fa16
   \themaDIntroductionRight <mi sol>16~
-  <mib sol>8 <mi re'> <mib do'>16 <mib re'>8 <fa la do>16~
+  <mib sol>8 <mi re'> <mi do'>16 <mi re'>8 <fa la do>16~
   <fa la do>8 <fa fa'> <mi mi'> <mib mib'>
   \themaDIntroductionRight <sol sib>16~
   <sol sib> do <sol sib>8 <sol do>16 sib <sol do> <fad re'>~
@@ -467,4 +490,10 @@ pianoPart = \new PianoStaff \with {
   >>
   \layout { }
   \midi { }
+}
+
+\score{
+  <<
+    \clarinetPart
+  >>
 }
