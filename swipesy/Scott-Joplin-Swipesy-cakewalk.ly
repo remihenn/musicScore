@@ -20,7 +20,7 @@ global = {
 
 themaAAnswerClarinet = {
   \compressMMRests { R2*3 }
-  \fixed do{
+  \fixed do'{
     r4 r16 sib8 sol16
     sib16 do' sib sol sib do' sib sol
     sib16 re'8 sib16 re'4
@@ -28,26 +28,50 @@ themaAAnswerClarinet = {
 }
 
 themaAClarinet = {
+  \mark "Thème A"
   \themaAAnswerClarinet
-  \fixed do {
-  do'16 re'8 do'16~
-  do' sol8 sib16
-  la2
+  \fixed do' {
+    do'16 re'8 do'16~
+    do' sol8 sib16
+    la2
   }
   \themaAAnswerClarinet
-  \fixed do {
+  \fixed do' {
     sol16 re'8. la16 do'8 sib16~
   }
 }
 
+themaAClarinetWithRepetition = {
+  \repeat volta 2 {
+    \themaAClarinet
+  }
+  \alternative {
+    {sib16 fa sol la sib do re fa}
+    {sib,16 fa sol la sib8 fa}
+  }
+}
+
+
 themaBClarinet = {
+  \mark "Thème B"
   \compressMMRests { R2*6 }
   sib16 re8 sib16 sol4
   r16 re'8 do16 re16 do sib sol
   \compressMMRests { R2*7 }
 }
 
+themaBClarinetWithRepetition = {
+  \repeat volta 2 {
+    \themaBClarinet
+  }
+  \alternative {
+    { r2 }
+    { r2 }
+  }
+}
+
 themaCClarinet = {
+  \mark "Thème C"
   \key mib \major
   r4 r16 do re mib
   sol8 fa16 fa~ fa r16 r8
@@ -65,7 +89,18 @@ themaCClarinet = {
   \compressMMRests { R2*3 }
 }
 
+themaCClarinetWithRepetition = {
+  \repeat volta 2 {
+    \themaCClarinet
+  }
+  \alternative {
+    { r2 }
+    { r2 }
+  }
+}
+
 themaDClarinet = {
+  \mark "Thème D"
   \key sib \major
   fa'16 re8 fa16 re8 r8
   fa16 re8 fa16 re8 r8
@@ -79,34 +114,7 @@ themaDClarinet = {
   fa,16 fa8 fa16 sol8 la
 }
 
-clarinet = \relative do'' {
-  \global
-  \transposition sib
-  % Music follows here.
-  \compressMMRests { R2*4 }
-  \repeat volta 2 {
-    \themaAClarinet
-  }
-  \alternative {
-    {sib,16 fa sol la sib do re fa}
-    {sib,16 fa sol la sib8 fa}
-  }
-  \repeat volta 2 {
-    \themaBClarinet
-  }
-  \alternative {
-    { r2 }
-    { r2 }
-  }
-  \themaAClarinet
-  sib4 r4
-  \repeat volta 2 {
-    \themaCClarinet
-  }
-  \alternative {
-    { r2 }
-    { r2 }
-  }
+themaDClarinetWithRepetition = {
   \repeat volta 2 {
     \themaDClarinet
   }
@@ -116,11 +124,42 @@ clarinet = \relative do'' {
   }
 }
 
-themaASaxo = {
+clarinet = \relative do'' {
+  \global
+  \transposition sib
+  % Music follows here.
+  \compressMMRests { R2*4 }
+  \themaAClarinetWithRepetition
+  \themaBClarinetWithRepetition
+  \themaAClarinet
+  sib4 r4
+  \themaCClarinetWithRepetition
+  \themaDClarinetWithRepetition
+}
+
+themaAQuestionSaxo = {
   sib'16 sib8 fa16 la16 sol fa re
   fa16 sol8 fa16 re8 sib
   sib16 re8 sib16 la8 re16 sol,~
   sol4 r4
+}
+
+themaASaxo = {
+  \mark "Thème A"
+  \themaAQuestionSaxo
+  \compressMMRests { R2*4 }
+  \themaAQuestionSaxo
+  \compressMMRests { R2*3 }
+}
+
+themaASaxoWithRepetition = {
+  \repeat volta 2 {
+    \themaASaxo
+  }
+  \alternative{
+    {r2}
+    {r2}
+  }
 }
 
 themaBIntroductionSaxo = {
@@ -131,32 +170,50 @@ themaBIntroductionSaxo = {
 }
 
 themaBSaxo = {
+  \mark "Thème B"
   \themaBIntroductionSaxo
   la16 re8 do16 la4~
   la2
   r2 r2
   \themaBIntroductionSaxo
+  sib16 do sib sol sib16 do sib sol
+  sib16 re8 sib16 re4
+  sol,16 re'8. la16 do8 sib16~
+}
+themaBSaxoWithRepetition = {
+  \repeat volta 2 {
+    \themaBSaxo
+  }
+  \alternative {
+    {sib8 r8 r4}
+    {sib8\repeatTie r8 r4}
+  }
 }
 
 themaCSaxo = {
+  \mark "Thème C"
+  \key mib \major
+  lab8 fa16 fa~ fa r16 r8
+  r4 r16 sib, do re
+  fa8 mib16 mib16~ mib16 r16 r8
+  r2
+  r16 re fa lab re do8 re16
+  do8 do16 do16~ do16 r16 r8
+  r16 mib, sol sib mib do8 mib16
+  do8 sib16 sib16~ sib8 sib16 la
+  lab8 fa16 fa~ fa r16 r8
+  r4 r16 sib, do re
+  fa8 mib16 mib16~ mib16 r16 r8
+  r4 r16 sib mib sol
+  r16 mi sol sib reb do8 sib16~
+  sib16 lab sol8 fa fad
+  sol16 sib8 sol16 fa8 fa16 mib~
+}
+
+themaCSaxoWithRepetition = {
   r4 r8 sib'16 la
   \repeat volta 2 {
-    \key mib \major
-    lab8 fa16 fa~ fa r16 r8
-    r4 r16 sib, do re
-    fa8 mib16 mib16~ mib16 r16 r8
-    r2
-    r16 re, fa lab re do8 re16
-    do8 do16 do16~ do16 r16 r8
-    r16 mib, sol sib mib do8 mib16
-    do8 sib16 sib16~ sib8 sib16 la
-    lab8 fa16 fa~ fa r16 r8
-    r4 r16 sib do re
-    fa8 mib16 mib16~ mib16 r16 r8
-    r4 r16 sib mib sol
-    r16 mi sol sib reb do8 sib16~
-    sib16 lab sol8 fa fad
-    sol16 sib8 sol16 fa8 fa16 mib~
+    \themaCSaxo
   }
   \alternative {
     { mib16 sol8 do16 sib8 sib16 la}
@@ -165,6 +222,7 @@ themaCSaxo = {
 }
 
 themaDSaxo = {
+  \mark "Thème D"
   \key sib \major
   r2
   r4 r8 r16 sib,~
@@ -183,32 +241,26 @@ themaDSaxo = {
   fa16 fa'8 re16 do8 do16 sib~
 }
 
-altoSax = \relative do'' {
-  \global
-  \transposition mib
-  % Music follows here.
-  \compressMMRests { R2*4 }
-  \themaASaxo
-  \compressMMRests { R2*4 }
-  \themaASaxo
-  \compressMMRests { R2*5 }
-  \themaBSaxo
-  sib16 do sib sol sib16 do sib sol
-  sib16 re8 sib16 re4
-  sol,16 re'8. la16 do8 sib16
-  r2 r2
-  \themaASaxo
-  \compressMMRests { R2*4 }
-  \themaASaxo
-  \compressMMRests { R2*3 }
-  \themaCSaxo
+themaDSaxoWithRepeatition = {
   \repeat volta 2 {
     \themaDSaxo
   }
   \alternative {
     {sib16 fa'8. fa8 fa8}
-    {sib,16 sib re fa sib8 r}
+    {sib,16\repeatTie sib re fa sib8 r}
   }
+}
+
+altoSax = \relative do'' {
+  \global
+  \transposition mib
+  % Music follows here.
+  \compressMMRests { R2*4 }
+  \themaASaxoWithRepetition
+  \themaBSaxoWithRepetition
+  \themaASaxo
+  \themaCSaxoWithRepetition
+  \themaDSaxoWithRepeatition
 }
 
 introductionRight = {
@@ -459,6 +511,7 @@ left = \relative do {
 
 clarinetPart = \new Staff \with {
   instrumentName = "Clarinet"
+  shortInstrumentName = "Cl"
   midiInstrument = "clarinet"
 }
 \clarinet
@@ -466,13 +519,13 @@ clarinetPart = \new Staff \with {
 
 altoSaxPart = \new Staff \with {
   instrumentName = "Alto Sax"
+  shortInstrumentName = "Sax"
   midiInstrument = "alto sax"
-}
-\altoSax
-%\transpose mib do {\altoSax}
+} \altoSax
 
 pianoPart = \new PianoStaff \with {
   instrumentName = "Piano"
+  shortInstrumentName = "Pn"
 } <<
   \new Staff = "right" \with {
     midiInstrument = "acoustic grand"
@@ -484,16 +537,22 @@ pianoPart = \new PianoStaff \with {
 
 \score {
   <<
-    \clarinetPart
     \altoSaxPart
+    \clarinetPart
     \pianoPart
   >>
   \layout { }
   \midi { }
 }
-
+\pageBreak
 \score{
   <<
-    \clarinetPart
+    \transpose mib do {\altoSax}
+  >>
+}
+\pageBreak
+\score{
+  <<
+    \transpose sib do {\clarinet}
   >>
 }
