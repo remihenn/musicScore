@@ -50,13 +50,24 @@ themaAClarinetWithRepetition = {
   }
 }
 
+themaBClarinetBegin = {
+  mib'4 fa,
+  mib' fa,
+  re' sib
+  sib sol
+}
 
 themaBClarinet = {
   \mark "Thème B"
-  \compressMMRests { R2*6 }
+  \themaBClarinetBegin
+  fad re'
+  r2
   sib16\( re8 sib16 sol4\)
   r16 re'8\( do16 re16 do sib sol\)
-  \compressMMRests { R2*7 }
+  \themaBClarinetBegin
+  \(mib8 fa sol la\)
+  sib4 r4
+  sol la
 }
 
 themaBClarinetWithRepetition = {
@@ -64,8 +75,8 @@ themaBClarinetWithRepetition = {
     \themaBClarinet
   }
   \alternative {
-    { r2 }
-    { r2 }
+    { sib4 r4 }
+    { sib4 r4 }
   }
 }
 
@@ -101,7 +112,7 @@ themaCClarinetWithRepetition = {
 }
 
 themaDPatternClarinet = {
-   fa16\( re8 fa16 re8\) r8
+  fa16\( re8 fa16 re8\) r8
 }
 
 themaDClarinet = {
@@ -115,8 +126,9 @@ themaDClarinet = {
   \compressMMRests { R2*2 }
   \themaDPatternClarinet
   \themaDPatternClarinet
+  \compressMMRests { R2*2 }
   sib8\( lab sol fa\)
-  mib4 fa
+  mib4 mi
   fa16 fa8 fa16\( sol8\) la
 }
 
@@ -275,17 +287,17 @@ introductionRight = {
   fa16\f fa'8-> dod16 re8 do
   sib8 re, mib mi
   fa16 sib8-> sold16 la8 sol
-  fa8 fa' <mi sol> <mib la>
+  fa8 fa' <mi sol-4> <mib la>
 }
 
 themaAQuestionRight = {
-  <re sib'>16 <re sib'>8 fa16 la16 sol fa re
-  fa16 sol8 fa16 re8 sib
-  sib16 re8 sib16 <fad la>8 <fad re'>16 % last pitch after
+  <re sib'-4>16 <re sib'>8 fa16 la16-5 sol fa re
+  fa16 sol8 fa16 re8-2 sib
+  sib16-3 re8 sib16 <fad la>8 <fad re'>16 % last pitch after
 }
 
 themaAAnswerRight = {
-  sol4 r16 sib8 sol16
+  sol4 r16 sib8-3 sol16
   sib16 do sib sol sib do sib sol
   sib16 <fa re'>8 sib16 % last pitch after
 }
@@ -293,18 +305,18 @@ themaAAnswerRight = {
 themaARight = {
   \themaAQuestionRight sol16~
   \themaAAnswerRight <sol re'>4
-  do16 <do sib'>8 <do la'>16~ <do la'>16 mi8 <do sol'>16
-  <mib do'>16 fa <mib la> fa sol16 <mib la>8 fa16
+  do16-2 <do-1 sib'-4>8 <do la'-5>16~ <do la'>16 mi8 <do sol'-4>16
+  <mib-1 do'-5>16 fa <mib la> fa sol16 <mib la>8 fa16
   \themaAQuestionRight sol~
   \themaAAnswerRight  <fa re'>4
   <mi sol>16 <mi re'>8. <fa la>16 <fa do'>8 <fa sib>16~
 }
 
 themaBIntroductionRight = {
-  la16 <fa mib'>8 do'16 re16 do la fa
+  la16-2 <fa-1 mib'-4>8 do'16-3 re16-4 do la fa
   la16 <fa mib'>8 do'16 re16 do la fa
   sib16 re8 sib16 sol4
-  r16 <sol sib re>8 do16 re16 do sib sol
+  r16 <sol sib re>8 do16-4 re16 do sib sol
 }
 
 themaBRight = {
@@ -320,9 +332,9 @@ themaBRight = {
 }
 
 themaCBeginRight = {
-  lab8 fa16 fa~ fa do re mib
-  <lab, re sol>8 <lab re fa>16 <lab re fa>16~ <lab re fa>16 sib do re
-  <sol, fa'>8 <sol mib'>16 <sol mib'>16~ <sol mib'>16 sol lab sib
+  lab8 fa16-3 fa~ fa do re mib
+  <lab, re sol>8 <lab re fa>16 <lab re fa>16~ <lab re fa>16 sib-2 do re
+  <sol, fa'>8 <sol mib'>16 <sol mib'>16~ <sol mib'>16 sol-4 lab sib
   <sol do>8 <sol sib>16 <sol sib>16~ <sol sib>16  % last picht after
 }
 
@@ -331,9 +343,9 @@ themaCRight = {
   \themaCBeginRight sol fa mib
   r16 re fa lab re <lab do>8 re16
   <lab do>8 <lab do>16 <lab do>16~ <lab do>16 sib lab fa
-  r16 mib sol sib mib <sol, do>8 mib'16
-  <sol, do>8 <sol sib>16 <sol sib>16~ <sol sib>8 sib'16 la
-  \themaCBeginRight sib mib sol
+  r16 mib-1 sol sib mib <sol, do>8 mib'16
+  <sol, do>8 <sol sib>16 <sol sib>16~ <sol sib>8 sib'16-4 la
+  \themaCBeginRight sib-1 mib sol
   r16 mi sol sib reb do8 <do, sib'>16~
   <do sib'>16 lab' <sib, do mi sol>8 <lab do fa> <do mib fad>
   sol'16 sib8 sol16 <la, mib' fa>8 <lab fa'>16 <sol mib'>~
@@ -378,10 +390,10 @@ right = \relative do' {
   }
   \alternative {
     {<fa sib>8 \acciaccatura sol' fa \acciaccatura sol fa fa,}
-    {<fa sib>8 fa' <mi sol> <mib la>}
+    {<fa sib>8 fa' <mi sol-4> <mib la>}
   }
   \themaARight
-  <fa sib>16 \(fa sol la\) sib8 sib'16 la
+  <fa sib>16 \(fa sol la\) sib8 sib'16-4 la
   \repeat volta 2 {
     \themaCRight
   }
