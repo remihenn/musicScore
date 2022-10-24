@@ -21,9 +21,9 @@ global = {
 themaAAnswerClarinet = {
   \compressMMRests { R2*3 }
   \fixed do'{
-    r4 r16 sib8 sol16
-    sib16 do' sib sol sib do' sib sol
-    sib16 re'8 sib16 re'4
+    r4 r16 sib8\( sol16\)
+    sib16\( do' sib sol\) sib\( do' sib sol\)
+    sib16\( re'8 sib16\) re'4
   }
 }
 
@@ -31,13 +31,12 @@ themaAClarinet = {
   \mark "Thème A"
   \themaAAnswerClarinet
   \fixed do' {
-    do'16 re'8 do'16~
-    do' sol8 sib16
+    do'16\( re'8 do'16~ do'16 sol8 sib16\)
     la2
   }
   \themaAAnswerClarinet
   \fixed do' {
-    sol16 re'8. la16 do'8 sib16~
+    sol16\( re'8. la16 do'8 sib16~\)
   }
 }
 
@@ -46,8 +45,8 @@ themaAClarinetWithRepetition = {
     \themaAClarinet
   }
   \alternative {
-    {sib16 fa sol la sib do re fa}
-    {sib,16 fa sol la sib8 fa}
+    {sib16 fa\( sol la sib do re fa\)}
+    {sib,16\( fa sol la sib8 fa\)}
   }
 }
 
@@ -55,8 +54,8 @@ themaAClarinetWithRepetition = {
 themaBClarinet = {
   \mark "Thème B"
   \compressMMRests { R2*6 }
-  sib16 re8 sib16 sol4
-  r16 re'8 do16 re16 do sib sol
+  sib16\( re8 sib16 sol4\)
+  r16 re'8\( do16 re16 do sib sol\)
   \compressMMRests { R2*7 }
 }
 
@@ -73,20 +72,22 @@ themaBClarinetWithRepetition = {
 themaCClarinet = {
   \mark "Thème C"
   \key mib \major
-  r4 r16 do re mib
-  sol8 fa16 fa~ fa r16 r8
-  r4 r16 sol, lab sib
-  do8 sib16 sib~ sib r16 r8
-  r16 fa lab do re do8 re16
-  do8 do16 do16~ do16 r16 r8
-  r16 mib, sol sib mib do8 mib16
-  do8 sib16 sib16~ sib8 r8
+  r4 r16 do\( re mib\)
+  sol8\( fa16 fa~ fa\) r16 r8
+  r4 r16 sol,\( lab sib\)
+  do8\( sib16 sib~ sib\) r16 r8
+  r16 fa\( lab do\) re\( do8 re16
+  do8 do16 do16~ do16\) r16 r8
+  r16 mib,\( sol sib\) mib\( do8 mib16
+  do8 sib16 sib16~ sib8\) r8
   %
-  r4 r16 do re mib
-  sol8 fa16 fa~ fa r16 r8
-  r4 r16 sol, lab sib
-  do8 sib16 sib~ sib r16 r8
-  \compressMMRests { R2*3 }
+  r4 r16 do\( re mib\)
+  sol8\( fa16 fa~ fa\) r16 r8
+  r4 r16 sol,\( lab sib\)
+  do8\( sib16 sib~ sib\) r16 r8
+  sib4 mi,
+  fa8\( sol lab la\)
+  sib4 re
 }
 
 themaCClarinetWithRepetition = {
@@ -94,24 +95,29 @@ themaCClarinetWithRepetition = {
     \themaCClarinet
   }
   \alternative {
-    { r2 }
-    { r2 }
+    { mib8 r8 r4 }
+    { mib8 r8 r4 }
   }
+}
+
+themaDPatternClarinet = {
+   fa16\( re8 fa16 re8\) r8
 }
 
 themaDClarinet = {
   \mark "Thème D"
   \key sib \major
-  fa'16 re8 fa16 re8 r8
-  fa16 re8 fa16 re8 r8
+  \themaDPatternClarinet
+  \themaDPatternClarinet
   \compressMMRests { R2*2 }
-  fa16 re8 fa16 re8 r8
-  fa16 re8 fa16 re8 r8
+  \themaDPatternClarinet
+  \themaDPatternClarinet
   \compressMMRests { R2*2 }
-  fa16 re8 fa16 re8 r8
-  fa16 re8 fa16 re8 r8
-  \compressMMRests { R2*4 }
-  fa,16 fa8 fa16 sol8 la
+  \themaDPatternClarinet
+  \themaDPatternClarinet
+  sib8\( lab sol fa\)
+  mib4 fa
+  fa16 fa8 fa16\( sol8\) la
 }
 
 themaDClarinetWithRepetition = {
@@ -135,6 +141,7 @@ clarinet = \relative do'' {
   sib4 r4
   \themaCClarinetWithRepetition
   \themaDClarinetWithRepetition
+  \bar "|."
 }
 
 themaAQuestionSaxo = {
@@ -261,6 +268,7 @@ altoSax = \relative do'' {
   \themaASaxo
   \themaCSaxoWithRepetition
   \themaDSaxoWithRepeatition
+  \bar "|."
 }
 
 introductionRight = {
@@ -386,8 +394,9 @@ right = \relative do' {
   }
   \alternative {
     {<re sib'>16 <fa fa'>8. <fa fa'>8 <fa la fa'>}
-    {<re sib'>16 sib' re fa <sib, sib'>8 r \bar "|."}
+    {<re sib'>16 sib' re fa <sib, sib'>8 r}
   }
+  \bar "|."
 }
 
 introductionLeft = {
@@ -507,6 +516,7 @@ left = \relative do {
     {<sib sib'> <fa' sib re> <fa sib re> <fa do' mib> }
     {<sib, sib'> <fa fa'> <sib, sib'> r}
   }
+  \bar "|."
 }
 
 clarinetPart = \new Staff \with {
@@ -547,12 +557,12 @@ pianoPart = \new PianoStaff \with {
 \pageBreak
 \score{
   <<
-    \transpose mib do {\altoSax}
+    \transpose mib do {\altoSaxPart}
   >>
 }
 \pageBreak
 \score{
   <<
-    \transpose sib do {\clarinet}
+    \transpose sib do {\clarinetPart}
   >>
 }
