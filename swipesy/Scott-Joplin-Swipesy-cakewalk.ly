@@ -303,6 +303,7 @@ themaAAnswerRight = {
 }
 
 themaARight = {
+  \mark "Thème A"
   \themaAQuestionRight sol16~
   \themaAAnswerRight <sol re'>4
   do16-2 <do sib'-4>8 <do la'-5>16~ <do la'>16 mi8 <do sol'-4>16
@@ -320,6 +321,7 @@ themaBIntroductionRight = {
 }
 
 themaBRight = {
+  \mark "Thème B"
   \themaBIntroductionRight
   la16 <fad re'>8 do'16 <fad, la>4~
   <fad la>2
@@ -339,6 +341,7 @@ themaCBeginRight = {
 }
 
 themaCRight = {
+  \mark "Thème C"
   \key mib \major
   \themaCBeginRight sol-4 fa mib
   r16 re fa lab re <lab do>8 re16
@@ -359,6 +362,7 @@ themaDIntroductionRight = {
 }
 
 themaDRight = {
+  \mark "Thème D"
   \key sib \major
   \themaDIntroductionRight <sol sib>16~
   <sol sib>16 do <sol re'> sib <sol do> re' <sol, do> <fa sib>~
@@ -576,5 +580,11 @@ pianoPart = \new PianoStaff \with {
 \score{
   <<
     \transpose sib do {\clarinetPart}
+  >>
+}
+\pageBreak
+\score {
+  <<
+    \pianoPart
   >>
 }
