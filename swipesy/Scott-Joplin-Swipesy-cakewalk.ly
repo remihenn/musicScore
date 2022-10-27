@@ -394,7 +394,7 @@ right = \relative do' {
   }
   \alternative {
     {<fa sib>8 \acciaccatura sol' fa \acciaccatura sol fa fa,}
-    {<fa sib>8 fa' <mi sol-4> <mib la>}
+    {<fa sib>8\repeatTie fa' <mi sol-4> <mib la>}
   }
   \themaARight
   <fa sib>16 \(fa sol la\) sib8 sib'16-4 la
