@@ -46,7 +46,7 @@ themaAClarinetWithRepetition = {
   }
   \alternative {
     {sib16 fa\( sol la sib do re fa\)}
-    {sib,16\( fa sol la sib8 fa\)}
+    {sib,16\repeatTie \( fa sol la sib8 fa\)}
   }
 }
 
@@ -76,7 +76,7 @@ themaBClarinetWithRepetition = {
   }
   \alternative {
     { sib4\) r4 }
-    { sib4 r4 }
+    { sib4\repeatTie r4 }
   }
 }
 
@@ -236,7 +236,7 @@ themaCSaxoWithRepetition = {
   }
   \alternative {
     { mib16 sol8 do16 sib8 sib16 la}
-    {mib8 sib' mib fa,}
+    {mib8\repeatTie sib' mib fa,}
   }
 }
 
@@ -306,7 +306,7 @@ themaARight = {
   \mark "Thème A"
   \themaAQuestionRight sol16~
   \themaAAnswerRight <sol re'>4
-  do16-2 <do sib'-4>8 <do la'-5>16~ <do la'>16 mi8 <do sol'-4>16
+  do16-2 <do sib'-4>8 <do la'-5>16~ <do la'>16 mi16 <do sol'-4>8
   <mib do'-5>16 fa <mib la> fa sol16 <mib la>8 fa16
   \themaAQuestionRight sol~
   \themaAAnswerRight  <fa re'>4
@@ -387,7 +387,7 @@ right = \relative do' {
   }
   \alternative {
     { <fa sib>16 \(fa sol la sib16 do re fa\) }
-    { <fa, sib>16 \(fa sol la sib8\) fa}
+    { <fa, sib>16\repeatTie \(fa sol la sib8\) fa}
   }
   \repeat volta 2 {
     \themaBRight
@@ -403,14 +403,14 @@ right = \relative do' {
   }
   \alternative {
     {<sol mib'>16 sol'8 do16 sib8 sib16 la}
-    {<sol, mib'>8 <re' lab' sib> <mib sol sib mib> fa,}
+    {<sol, mib'>8\repeatTie <re' lab' sib> <mib sol sib mib> fa,}
   }
   \repeat volta 2 {
     \themaDRight
   }
   \alternative {
     {<re sib'>16 <fa fa'>8. <fa fa'>8 <fa la fa'>}
-    {<re sib'>16 sib' re fa <sib, sib'>8 r}
+    {<re sib'>16\repeatTie sib' re fa <sib, sib'>8 r}
   }
   \bar "|."
 }
