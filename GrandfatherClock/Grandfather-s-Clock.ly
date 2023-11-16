@@ -80,7 +80,7 @@ themeDClarinetI = \relative do' {
   mi8\( sol\) sol4 \bar "||"
 }
 
-scoreClarinetI = \relative do' {
+clarinetI = \relative do' {
   \override Score.BarNumber.break-visibility = ##(#f #t #t)
   \global
   \transposition sib
@@ -165,7 +165,7 @@ themeDClarinetII = \relative do' {
   \bar "||"
 }
 
-scoreClarinetII = {
+clarinetII = {
   \override Score.BarNumber.break-visibility = ##(#f #t #t)
   \global
   \transposition sib
@@ -234,7 +234,7 @@ ThemeDClarinetIII = \relative do' {
   sol8\( do\) do4 \bar "||"
 }
 
-scoreClarinetIII = \relative do' {
+clarinetIII = \relative do' {
   \override Score.BarNumber.break-visibility = ##(#f #t #t)
   \global
   \transposition sib
@@ -248,27 +248,39 @@ scoreClarinetIII = \relative do' {
   mi4\fermata \parenthesize \mf r
 }
 
-scoreClarinetIPart = \new Staff \with {
+clarinetIPart = \new Staff \with {
   instrumentName = "Clarinet I"
   midiInstrument = "clarinet"
-} \scoreClarinetI
+} \clarinetI
 
-scoreClarinetIIPart = \new Staff \with {
+clarinetIIPart = \new Staff \with {
   instrumentName = "Clarinet II"
   midiInstrument = "clarinet"
-} \scoreClarinetII
+} \clarinetII
 
-scoreClarinetIIIPart = \new Staff \with {
+clarinetIIIPart = \new Staff \with {
   instrumentName = "Clarinet III"
   midiInstrument = "clarinet"
-} \scoreClarinetIII
+} \clarinetIII
 
 \score {
   <<
-    \scoreClarinetIPart
-    \scoreClarinetIIPart
-    \scoreClarinetIIIPart
+    \clarinetIPart
+    \clarinetIIPart
+    \clarinetIIIPart
   >>
   \layout { }
   \midi { }
+}
+
+
+
+\pageBreak
+% Piano part
+\score{
+  <<
+    \transpose do sib, {\clarinetIPart}
+    \transpose do sib, {\clarinetIIIPart}
+    \clarinetIIPart
+  >>
 }
